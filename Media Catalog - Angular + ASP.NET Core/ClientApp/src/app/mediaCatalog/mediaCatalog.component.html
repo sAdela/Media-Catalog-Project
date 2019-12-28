@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="input-icons">
+       
+        <input type="text" (keydown.enter) = "getSearchQueryItems($event.target.value)" autocomplete="off" placeholder="Search Library.." name="search" [(ngModel)]="searchQuery">
+        <button (click)="getSearchQueryItems(searchQuery)"><i class="fa fa-search"></i></button>
+
+      </div>
+    </div>
+    <div class="content">
+      <form class="form-inline" (ngSubmit)="getValues()">
+        <select [(ngModel)]="selectedGenre" name="first">
+          <option *ngFor="let genre of genres">
+            {{genre}}
+          </option>
+        </select>
+
+        <select [(ngModel)]="selectedCountry" name="second">
+          <option *ngFor="let country of countries">
+            {{country}}
+          </option>
+        </select>
+        <button type="submit" class="btn btn-warning manage">Search</button>
+      </form>
+
+
+
+        <div class="table-responsive">
+          <table class="table" *ngIf="mediaItems && mediaItems.length">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Genre</th>
+                <th>Publisher</th>
+                <th>Country</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let mediaItem of mediaItems">
+                <td>{{mediaItem.title}}</td>
+                <td>{{mediaItem.artist}}</td>
+                <td>{{mediaItem.genre}}</td>
+                <td>{{mediaItem.publisher}}</td>
+                <td>{{mediaItem.country}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+    </div>
+  </div>
+</body>
+</html>

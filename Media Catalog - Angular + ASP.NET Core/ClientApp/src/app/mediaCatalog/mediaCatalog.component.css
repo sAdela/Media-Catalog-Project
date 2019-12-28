@@ -1,0 +1,59 @@
+body {
+    margin-left: 20%;
+}
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+.header {
+  text-align: center;
+  position: relative;
+}
+input {
+  margin-top: 3%;
+  border-radius: 5%;
+  text-align: center;
+  padding: 7px;
+  width: 35%;
+}
+
+select {
+  width: 30%;
+  padding: 10px 15px;
+  border: 1px dashed rgb(246, 194, 56);
+  border-radius: 4px;
+  margin: 3%;
+  margin-left: 5%;
+}
+
+.input-icons input {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: 1px dashed rgb(246, 194, 56);
+}
+
+.input-icons button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: rgb(246, 194, 56);
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.input-icons button:hover {
+    background: #ccc;
+  }
+
+.container {
+  min-height: 100%;
+  width:80%;
+  display: grid;
+  grid-template-rows: 100px auto;
+  position: absolute;
+  padding: 0px;
+  background-color: rgb(251,251,251);
+}
+.content{
+    margin: 10px;
+}
